@@ -1,0 +1,111 @@
+@import "bootstrap.min";
+@import "ionicons/ionicons";
+@import "tinymce/content.inline.min";
+@import "tinymce/content.min";
+@import "tinymce/skin.min";
+
+html, body {
+  background-color: #fff;
+  color: #2e2f30;
+  letter-spacing: 0.5px;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  height: 100vh;
+  margin: 0;
+  footer {
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+  }
+
+  a, a:hover, a:focus, a:visited {
+    color: #744d82;
+  }
+
+  .logo {
+    width: 400px;
+  }
+
+  .page-enter-active, .page-leave-active {
+    transition: opacity .5s
+  }
+  .page-enter, .page-leave-active {
+    opacity: 0
+  }
+
+}
+
+.container {
+  margin: 0;
+  width: 100%;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.button, .button:visited {
+  display: inline-block;
+  color: #744d82;
+  letter-spacing: 1px;
+  background-color: #fff;
+  border: 2px solid #744d82;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px 45px;
+}
+
+.button:hover, .button:focus {
+  color: #fff;
+  background-color: #744d82;
+}
+
+.title {
+  color: #505153;
+  font-weight: 300;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.about.container {
+  .title {
+    margin-top: 50px;
+  }
+  .info {
+    font-weight: 300;
+    color: #9aabb1;
+    margin: 0;
+    margin-top: 10px;
+  }
+  .button {
+    margin-top: 50px;
+  }
+}
+
+.index.container {
+  .title {
+    margin: 50px 0;
+  }
+}
+
+.container.error {
+  .title {
+    margin-top: 15px;
+    font-size: 5em;
+  }
+
+  .info {
+    font-weight: 300;
+    color: #9aabb1;
+    margin: 0;
+  }
+
+  .button {
+    margin-top: 50px;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+a.btn.btn-success, a.btn.btn-primary, a.btn.btn-danger {
+  color: white !important;
+}

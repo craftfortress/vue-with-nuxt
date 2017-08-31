@@ -1,0 +1,2 @@
+# ignoring eslint on js plugin file with import/require
+app/plugins/*.js
