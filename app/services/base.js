@@ -6,6 +6,7 @@ const axios = require('axios')
 export default class {
   /**
    * Constructor method declaration API to make url
+   * and available method service
    * @param api
    */
   constructor (api) {
@@ -30,17 +31,32 @@ export default class {
   }
 
   /**
-   * service method to Make an HTTP Request
+   * main service method to Make an HTTP Request
    * base on XHR or familiar with ajax on JQUERY
+   * this method will auto covert param to JSON stringify format
+   * and if method is 'GET' will filter query on param
    * @param type, type method to be send, GET PUT, POST etc
    * @param url, where this to be send, not allowed null
    * @param param, parameter data, can be null based on need
    *
    * usage: return this.service(type, 'http:localhost', param)
-   * dont use from external base service
    */
   service (type, url, param) {
     const headers = {'Content-Type': 'application/json'}
+    // filter query on method is 'GET'
+    if (type === this.method.get && typeof param === 'object' && param !== null) {
+      let query = '?'
+      let index = 0
+      // loop param to add & at end param
+      const objectLength = Object.keys(param).length
+      for (let key in param) {
+        if (param.hasOwnProperty(key)) {
+          index = index + 1
+          // if object is last not append '&' at end
+          query = objectLength === index ? query + key + '=' + param[key] : query + key + '=' + param[key] + '&'
+        }
+      }
+    }
 
     // function to handle formatting json
     function convertToStringify (param) {
