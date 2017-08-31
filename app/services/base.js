@@ -56,6 +56,11 @@ export default class {
           query = objectLength === index ? query + key + '=' + param[key] : query + key + '=' + param[key] + '&'
         }
       }
+
+      url = url + query
+      // handle when param is only string
+    } else if (typeof param === 'string' && param !== null) {
+      url = url + '/' + param
     }
 
     // function to handle formatting json

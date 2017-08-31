@@ -33,7 +33,6 @@
   </div>
 </template>
 
-
 <script>
   import LoginService from '../services/login'
 
