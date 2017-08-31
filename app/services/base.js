@@ -7,7 +7,7 @@ export default class {
   /**
    * Constructor method declaration API to make url
    * and available method service
-   * @param api
+   * @param api {string} url API
    */
   constructor (api) {
     this.api = api
@@ -20,8 +20,19 @@ export default class {
   }
 
   /**
+   * find method find
+   * @param param {object} parameter data allow null
+   * @param offset {int} parameter offset data allowed null based on need
+   * @param limit {int} parameter limit data allowed null based on need
+   * @returns result from API
+   */
+  find (param = null, offset = null, limit = null) {
+    return this.service(this.method.get, this.api, param, offset, limit)
+  }
+
+  /**
    * save method for fetch(ajax) POST
-   * @param param
+   * @param param {object} parameter data not allowed null
    *
    * usage : this.save(param)
    * call from child class to send POST
@@ -31,17 +42,30 @@ export default class {
   }
 
   /**
+   * update method for fetch(ajax) PUT
+   * @param param {object} parameter data not allowed null
+   *
+   * usage : this.update(param)
+   * call from child class to send PUT
+   */
+  update (param) {
+    return this.service(this.method.put, this.api, param)
+  }
+
+  /**
    * main service method to Make an HTTP Request
    * base on XHR or familiar with ajax on JQUERY
    * this method will auto covert param to JSON stringify format
    * and if method is 'GET' will filter query on param
-   * @param type, type method to be send, GET PUT, POST etc
-   * @param url, where this to be send, not allowed null
-   * @param param, parameter data, can be null based on need
+   * @param type {string} type method to be send GET PUT POST etc
+   * @param url {string} where this to be send not allowed null
+   * @param param {object} parameter data allowed null based on need
+   * @param offset {int} parameter offset data allowed null based on need
+   * @param limit {int} parameter limit data allowed null based on need
    *
    * usage: return this.service(type, 'http:localhost', param)
    */
-  service (type, url, param) {
+  service (type, url, param, offset = null, limit = null) {
     const headers = {'Content-Type': 'application/json'}
     // filter query on method is 'GET'
     if (type === this.method.get && typeof param === 'object' && param !== null) {
