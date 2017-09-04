@@ -36,6 +36,7 @@
 
 <script>
   import LoginService from '../services/login'
+  import '../helpers/example'
 
   export default {
     data () {
@@ -53,6 +54,13 @@
     },
     methods: {
       doLogin () {
+        this.$notify({
+          group: 'foo',
+          title: 'Important message',
+          text: 'Hello user! This is a notification!',
+          duration: 1000000,
+        })
+
         console.log(process.env.API_URL);
         const context = this
         window.FB.login(function (response) {
