@@ -26,6 +26,8 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
+    "fs": "0.0.1-security",
+    "glob": "^7.1.2",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6"
   }
