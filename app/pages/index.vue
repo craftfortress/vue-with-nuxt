@@ -6,6 +6,7 @@
         </div>
         <div class="logo-plunq"><img src="/image/logo.png"></div>
         <div>eq(1, 1) = {{eq(1, 1)}}</div>
+        <div>morethan(5, 1) = {{morethan(5, 1)}}</div>
         <div class="bg"></div>
         <div class="btn-login-wrapper">
           <div class="inner"><a @click="doLogin"><img src="/image/facebook_login.png"></a></div>
