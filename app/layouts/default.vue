@@ -1,7 +1,7 @@
 <template>
   <div>
     <no-ssr>
-      <notifications group="foo"/>
+      <notifications/>
     </no-ssr>
     <nuxt/>
     <MyFooter/>

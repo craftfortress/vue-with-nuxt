@@ -33,7 +33,8 @@ module.exports = {
   css: ['~assets/css/main.scss'],
   // add plugin here
   plugins: [
-    {src: '~/plugins/loader', ssr: false},
+    {src: '~/plugins/loader-SSR', ssr: true},
+    {src: '~/plugins/loader-noSSR', ssr: false},
     {src: '~/plugins/jquery.min', ssr: false},
     {src: '~/plugins/facebooksdk', ssr: false}
   ],
