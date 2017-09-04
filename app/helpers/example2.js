@@ -1,6 +1,10 @@
+import Vue from 'vue'
 
-export default {
-  morethan (value1, value2) {
-    return value1 > value2
+// loader export helper
+Vue.mixin({
+  methods: {
+    morethan (value1, value2) {
+      return value1 > value2
+    }
   }
-}
+})

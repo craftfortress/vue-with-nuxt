@@ -1,6 +1,10 @@
+import Vue from 'vue'
 
-export default {
-  eq (value1, value2) {
-    return value1 === value2
+// loader export helper
+Vue.mixin({
+  methods: {
+    eq (value1, value2) {
+      return value1 === value2
+    }
   }
-}
+})
